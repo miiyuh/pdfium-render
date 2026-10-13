@@ -176,9 +176,9 @@ impl<'a> PdfForm<'a> {
         }
     }
 
-    /// Returns the internal `FPDF_FORMHANDLE` handle for this [PdfForm].
+    /// Returns the internal `FPDF_FORMHANDLE` handle for this [PdfForm], for functions this crate does not wrap (`FORM_*`).
     #[inline]
-    pub(crate) fn handle(&self) -> FPDF_FORMHANDLE {
+    pub fn handle(&self) -> FPDF_FORMHANDLE {
         self.form_handle
     }
 

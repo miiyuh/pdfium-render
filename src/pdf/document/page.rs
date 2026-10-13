@@ -224,9 +224,9 @@ impl<'a> PdfPage<'a> {
         result
     }
 
-    /// Returns the internal `FPDF_PAGE` handle for this [PdfPage].
+    /// Returns the internal `FPDF_PAGE` handle for this [PdfPage], for functions this crate does not wrap.
     #[inline]
-    pub(crate) fn page_handle(&self) -> FPDF_PAGE {
+    pub fn page_handle(&self) -> FPDF_PAGE {
         self.page_handle
     }
 

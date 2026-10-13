@@ -390,6 +390,13 @@ impl<'a> PdfPageAnnotation<'a> {
         }
     }
 
+    /// Returns the internal `FPDF_ANNOTATION` handle for this [PdfPageAnnotation], for functions this
+    /// crate does not wrap.
+    #[inline]
+    pub fn annotation_handle(&self) -> FPDF_ANNOTATION {
+        self.unwrap_as_trait().handle()
+    }
+
     /// The type of this [PdfPageAnnotation].
     ///
     /// Not all PDF annotation types are supported by Pdfium. For example, Pdfium does not
